@@ -1,6 +1,6 @@
 # Config Map
 kind: ConfigMap 
-apiVersion: v1 
+apiVersion: v8 
 metadata:
   name: springapp-configmap
 data:
@@ -9,7 +9,7 @@ data:
   password: mongodb@123
 ---
 # Replication Controller for springapp
-apiVersion: v1
+apiVersion: v8
 kind: ReplicationController
 metadata:
   name: spring-controller
@@ -23,7 +23,7 @@ spec:
         app: springboot
     spec:
       containers:
-      - image: dockerhandson/spring-boot-mongo
+      - image: ravigokana/spring-boot-mongo
         name: springboot
         ports:
         - containerPort: 8080  
